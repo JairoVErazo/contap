@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 export default function EmpleadoDetalle({ empleadoId }) {
   const [pagos, setPagos] = useState([]);
@@ -9,13 +9,13 @@ export default function EmpleadoDetalle({ empleadoId }) {
       fetch(`/api/empleados/${empleadoId}/pagos`)
         .then((response) => {
           if (!response.ok) {
-            throw new Error('Error al obtener los pagos del empleado');
+            throw new Error("Error al obtener los pagos del empleado");
           }
           return response.json();
         })
         .then((data) => setPagos(data))
         .catch((error) =>
-          console.error('Error al obtener los pagos del empleado:', error)
+          console.error("Error al obtener los pagos del empleado:", error)
         );
     }
   }, [empleadoId]);
@@ -29,14 +29,17 @@ export default function EmpleadoDetalle({ empleadoId }) {
   }
 
   return (
-    
     <div>
       <h1>Pagos del Empleado con ID: {empleadoId}</h1>
       <ul>
         {pagos.map((pago) => (
           <li key={pago.id}>
-            <p><strong>Fecha de Pago:</strong> {pago.fechaPago}</p>
-            <p><strong>Monto:</strong> {pago.monto}</p>
+            <p>
+              <strong>Fecha de Pago:</strong> {pago.fechaPago}
+            </p>
+            <p>
+              <strong>Monto:</strong> {pago.monto}
+            </p>
             {/* Agregar más detalles de pago según tus necesidades */}
           </li>
         ))}
@@ -44,4 +47,3 @@ export default function EmpleadoDetalle({ empleadoId }) {
     </div>
   );
 }
-

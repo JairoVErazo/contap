@@ -104,12 +104,6 @@ export async function POST(request) {
       pagos,
     } = await request.json();
 
-    /*const salarioBruto = calcularSalarioBruto(
-      parseFloat(salarioBase),
-      parseFloat(horasDiurnas),
-      parseFloat(horasNocturnas)
-    );**/
-
     const newEmpleado = await prisma.empleado.create({
       data: {
         nombre,
