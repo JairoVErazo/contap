@@ -7,7 +7,7 @@ import {
 } from "@/app/api/empleados/route";
 import { Modal } from "react-bootstrap";
 import Declaracion from "./Declaracion";
-import Indemnizacion from "./indemnizacion";
+import Indemnizacion from "./Indemnizacion";
 export const dynamic = "force-dynamic";
 
 export default function ListaEmpleados() {
