@@ -6,7 +6,7 @@ async function submitEmployee(employeeData) {
   console.log("Enviando datos al servidor:", employeeData);
 
   try {
-    const response = await fetch("http://localhost:3000/api/empleados", {
+    const response = await fetch(`/api/empleados`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
